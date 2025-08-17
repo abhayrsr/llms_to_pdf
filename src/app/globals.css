@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f9fafb;
+  --color-background-dark: #111827;
+  --color-text: #111827;
+  --color-text-dark: #f9fafb;
+  --color-primary: #2563eb;
+  --color-primary-dark: #3b82f6;
+  --color-secondary: #6b7280;
+  --color-secondary-dark: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-dark: #374151;
+  --color-card: #ffffff;
+  --color-card-dark: #1f2937;
+  --color-muted: #f3f4f6;
+  --color-muted-dark: #374151;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  
+  .dark body {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+  }
+  
+  /* Dark mode overrides */
+  .dark {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --color-card: var(--color-card-dark);
+    --color-border: var(--color-border-dark);
+    --color-muted: var(--color-muted-dark);
+  }
+  
+  /* File upload button styling */
+  input[type="file"]::file-selector-button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background-color: #1d4ed8;
+  }
+}
